@@ -104,7 +104,7 @@ class AppSettings(BaseSettings):
 
 
 app_settings = AppSettings()
-app = fastapi.FastAPI()
+app = fastapi.FastAPI(root_path=os.environ.get("ROOT_PATH"))
 headers = {"User-Agent": "FastChat API Server"}
 get_bearer_token = HTTPBearer(auto_error=False)
 
